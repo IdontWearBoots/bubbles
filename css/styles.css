@@ -1,0 +1,17 @@
+html, body {
+    width: 99%;
+    height: 99%;
+}
+
+body {
+    background-color: #07060e;
+}
+
+#canvas {
+    border: 1px solid black;
+    padding: none;
+    margin: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
