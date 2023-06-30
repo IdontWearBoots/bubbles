@@ -86,10 +86,10 @@ function simulate() {
 
         // if bubble is out of view, remove it from list of bubbles
         if(canvas.width / 2 < bubble.x - bubble.radius - 5 || bubble.x + bubble.radius + 5 < -canvas.width / 2) {
-            bubbles.splice(i, 1);
+            bubble.pop();
         }
         if(canvas.height / 2 < bubble.y - bubble.radius - 5 || bubble.y + bubble.radius + 5 < -canvas.height / 2) {
-            bubbles.splice(i, 1);
+            bubble.pop();
         }
         i++;
     }
