@@ -7,7 +7,7 @@ class Bubble {
      * @param {Integer} x X position
      * @param {Integer} y Y position
      */
-    constructor(radius, color, movementVec, x, y) {
+    constructor(x, y, radius, color, movementVec) {
         this.radius = radius;
         this.color = color;
         // .sqaush(100) because the movement may be too pronounced 
@@ -37,7 +37,17 @@ class Bubble {
     }
     pop() {
         // TODO: pop animation
-        this.popped = true;    
+        this.popped = true;
+
+        // add to the splashLines array the bubbles splashlines 
+        splashLines.push([
+            new SplashLine(this.x - this.radius, this.y - this.radius, -this.radius, Math.PI / 3),
+            new SplashLine(this.x - this.radius - 5, this.y, -this.radius, 0),
+            new SplashLine(this.x - this.radius, this.y + this.radius, -this.radius, -Math.PI / 3),
+            new SplashLine(this.x + this.radius, this.y - this.radius, -this.radius, 2 * Math.PI / 3),
+            new SplashLine(this.x + this.radius + 5, this.y, -this.radius, Math.PI),
+            new SplashLine(this.x + this.radius, this.y + this.radius, -this.radius, 4 * Math.PI / 3)
+        ]);
     }
     move() {
         // Move the Bubble's positions
