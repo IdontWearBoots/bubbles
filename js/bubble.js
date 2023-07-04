@@ -41,12 +41,12 @@ class Bubble {
 
         // add to the splashLines array the bubbles splashlines 
         splashLines.push([
-            new SplashLine(this.x - this.radius, this.y - this.radius, -this.radius, Math.PI / 3),
-            new SplashLine(this.x - this.radius - 5, this.y, -this.radius, 0),
-            new SplashLine(this.x - this.radius, this.y + this.radius, -this.radius, -Math.PI / 3),
-            new SplashLine(this.x + this.radius, this.y - this.radius, -this.radius, 2 * Math.PI / 3),
-            new SplashLine(this.x + this.radius + 5, this.y, -this.radius, Math.PI),
-            new SplashLine(this.x + this.radius, this.y + this.radius, -this.radius, 4 * Math.PI / 3)
+            new SplashLine(this.x - this.radius, this.y - this.radius, -this.radius, Math.PI / 3, this.color),
+            new SplashLine(this.x - this.radius - 5, this.y, -this.radius, 0, this.color),
+            new SplashLine(this.x - this.radius, this.y + this.radius, -this.radius, -Math.PI / 3, this.color),
+            new SplashLine(this.x + this.radius, this.y - this.radius, -this.radius, 2 * Math.PI / 3, this.color),
+            new SplashLine(this.x + this.radius + 5, this.y, -this.radius, Math.PI, this.color),
+            new SplashLine(this.x + this.radius, this.y + this.radius, -this.radius, 4 * Math.PI / 3, this.color)
         ]);
     }
     move() {

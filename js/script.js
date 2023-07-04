@@ -7,7 +7,7 @@ canvas.height = window.innerHeight - 5;
 ctx.translate(canvas.width / 2, canvas.height / 2);
 
 // set to true if you want multicoloured bubbles
-const colors = false;
+let colors = false;
 
 const backgroundColor = "#07060E";
 
@@ -30,6 +30,11 @@ const randInt = (max, min) => Math.round((Math.random() * (max - min)) + min);
 // random hex color
 const randCol = () => 
     `#${(randInt(0, 255)).toString(16)}${(randInt(0, 255)).toString(16)}${(randInt(0, 255)).toString(16)}`
+
+document.addEventListener("keydown", (event) => {
+    if(event.key === "c")
+        colors = !colors;
+});
 
 document.addEventListener("mouseup", () => {mouse.down = false});
 
